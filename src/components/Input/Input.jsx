@@ -1,16 +1,19 @@
-import { useId, useState } from "react";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { changeFilter } from "../../redux/filtersSlice";
+import { selectNameFilter } from "../../redux/filtersSlice";
 import css from "./Input.module.css";
 
 export default function Input() {
-  const id = useId();
-  const [inputValue, setInputValue] = useState("");
+  const dispatch = useDispatch();
+  const query = useSelector(selectNameFilter);
   const handleChange = (evt) => {
-    setInputValue(evt.target.value);
+    dispatch(changeFilter(evt.target.value));
   };
   return (
     <>
-      <input type="text" onChange={handleChange} value={inputValue} />
-      <p>{inputValue}</p>
+      <input type="text" onChange={handleChange} value={query} />
+      <p>{query}</p>
     </>
   );
 }
