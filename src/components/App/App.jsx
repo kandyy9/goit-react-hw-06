@@ -1,5 +1,5 @@
 import ContactForm from "../ContactForm/ContactForm";
-import Searchbox from "../SeacrhBox/SeacrhBox";
+import SearchBox from "../SearchBox/SearchBox";
 import ContactList from "../ContactList/ContactList";
 import css from "./App.module.css";
 
@@ -8,7 +8,7 @@ export default function App() {
     <div className={css.container}>
       <h1>Phone</h1>
       <ContactForm />
-      <Searchbox></Searchbox>
+      <SearchBox></SearchBox>
       <ContactList></ContactList>
     </div>
   );
